@@ -45,7 +45,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
 #
 $(call inherit-product, device/generic/goldfish/riscv64-vendor.mk)
 $(call inherit-product, device/generic/goldfish/64bitonly/product/emulator64_vendor.mk)
-$(call inherit-product, device/generic/goldfish/emulator64_arm64/device.mk)
+$(call inherit-product, build/make/target/board/emulator_riscv64/device.mk)
 
 # Define the host tools and libs that are parts of the SDK.
 $(call inherit-product-if-exists, sdk/build/product_sdk.mk)
@@ -54,5 +54,5 @@ $(call inherit-product-if-exists, development/build/product_sdk.mk)
 # Overrides
 PRODUCT_BRAND := Android
 PRODUCT_NAME := sdk_phone64_riscv64
-PRODUCT_DEVICE := emulator64_riscv64
+PRODUCT_DEVICE := emulator_riscv64
 PRODUCT_MODEL := Android SDK built for riscv64
