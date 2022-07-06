@@ -51,6 +51,9 @@ $(call inherit-product, build/make/target/board/emulator_riscv64/device.mk)
 $(call inherit-product-if-exists, sdk/build/product_sdk.mk)
 $(call inherit-product-if-exists, development/build/product_sdk.mk)
 
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+	system/lib64/libcompiler_rt.so
+
 # Overrides
 PRODUCT_BRAND := Android
 PRODUCT_NAME := sdk_phone64_riscv64

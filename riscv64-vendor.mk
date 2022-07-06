@@ -41,6 +41,14 @@ EMULATOR_VENDOR_NO_GNSS := true
 
 ifeq ($(QEMU_DISABLE_AVB),true)
     PRODUCT_COPY_FILES += \
-      device/generic/goldfish/data/etc/dummy.vbmeta.img:$(PRODUCT_OUT)/vbmeta.img \
-
+      device/generic/goldfish/data/etc/dummy.vbmeta.img:$(PRODUCT_OUT)/vbmeta.img
 endif
+
+
+# FIXME libcompiler_rt can't be built automatically on riscv device. manual to build
+PRODUCT_PACKAGES += \
+	libcompiler_rt
+
+# FIXME add timeout factor to avoid system_server timeout
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	ro.hw_timeout_multiplier=1000
